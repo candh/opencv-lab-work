@@ -1,0 +1,11 @@
+set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 2.8)
+project( DisplayImage )
+find_package( OpenCV REQUIRED )
+set(CMAKE_BUILD_FILES_DIRECTORY ${../})
+message("opencv INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
+message("opencv LIBS: ${OpenCV_LIBS}")
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( DisplayImage main.cpp )
+target_link_libraries( DisplayImage ${OpenCV_LIBS} )
+
